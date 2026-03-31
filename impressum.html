@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum — SmartKidsMontis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-brand">Smart<span>Kids</span>Montis</a>
+      <button class="nav-toggle" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="datenschutz.html">Datenschutz</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="hero" style="padding: 120px 0 60px;">
+    <div class="container">
+      <h1>Impressum</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" style="max-width: 700px;">
+      <h2>Angaben gemäß § 5 TMG</h2>
+      <p>
+        <!-- TODO: Echte Daten eintragen -->
+        <strong>[Vor- und Nachname]</strong><br>
+        [Straße und Hausnummer]<br>
+        [PLZ Ort]
+      </p>
+
+      <h3>Kontakt</h3>
+      <p>
+        E-Mail: <a href="mailto:smartkids@piepke.de">smartkids@piepke.de</a>
+      </p>
+
+      <h3>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h3>
+      <p>
+        <!-- TODO: Echte Daten eintragen -->
+        <strong>[Vor- und Nachname]</strong><br>
+        [Straße und Hausnummer]<br>
+        [PLZ Ort]
+      </p>
+
+      <h3>Haftungsausschluss</h3>
+
+      <h4>Haftung für Inhalte</h4>
+      <p>
+        Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt.
+        Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte
+        können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter
+        sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten
+        nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG
+        sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte
+        oder gespeicherte fremde Informationen zu überwachen.
+      </p>
+
+      <h4>Haftung für Links</h4>
+      <p>
+        Unser Angebot enthält Links zu externen Webseiten Dritter,
+        auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir
+        für diese fremden Inhalte auch keine Gewähr übernehmen. Für die
+        Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter
+        oder Betreiber der Seiten verantwortlich.
+      </p>
+
+      <p style="margin-top: 40px;"><a href="index.html">&larr; Zurück zur Startseite</a></p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <strong>SmartKidsMontis</strong> — Eine unabhängige Elterninitiative
+        </div>
+        <ul class="footer-links">
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    toggle.addEventListener('click', () => {
+      toggle.classList.toggle('active');
+      navLinks.classList.toggle('open');
+    });
+  </script>
+
+</body>
+</html>
