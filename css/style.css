@@ -34,20 +34,22 @@ html {
 }
 
 body {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 400;
   font-size: 17px;
   line-height: 1.7;
   color: var(--text);
   background: var(--bg-light);
   -webkit-font-smoothing: antialiased;
+  font-size-adjust: 0.465;
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   font-weight: 700;
   line-height: 1.25;
   color: var(--navy);
+  font-size-adjust: 0.478;
 }
 
 h1 { font-size: 2.6rem; }
@@ -230,6 +232,7 @@ section:nth-child(even) {
 .hero-image-wrapper img {
   width: 100%;
   height: auto;
+  aspect-ratio: 1751 / 897;
 }
 
 /* --- Hero --- */
