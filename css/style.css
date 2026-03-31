@@ -516,10 +516,7 @@ section:nth-child(even) .event-card {
   border-radius: var(--radius);
   padding: 32px;
   box-shadow: 0 2px 12px var(--shadow);
-  min-height: 300px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
 }
 
 section:nth-child(even) .tally-embed {
