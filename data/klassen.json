@@ -4,28 +4,28 @@
       "name_de": "Primarstufe 1",
       "name_en": "Primary Level 1 (Primarstufe 1)",
       "klassen": [
-        { "name": "Weiße Drachen",      "teilnehmer": 0, "gesamt": 20 },
-        { "name": "Goldene Füchse",      "teilnehmer": 0, "gesamt": 20 },
-        { "name": "Grüne Murmelluchse",  "teilnehmer": 0, "gesamt": 20 }
+        { "name": "Weiße Drachen",      "teilnehmer": 3, "gesamt": 20 },
+        { "name": "Goldene Füchse",      "teilnehmer": 5, "gesamt": 20 },
+        { "name": "Grüne Murmelluchse",  "teilnehmer": 10, "gesamt": 20 }
       ]
     },
     {
       "name_de": "Primarstufe 2",
       "name_en": "Primary Level 2 (Primarstufe 2)",
       "klassen": [
-        { "name": "Klasse Orange",  "teilnehmer": 0, "gesamt": 20 },
-        { "name": "Klasse Rot",     "teilnehmer": 0, "gesamt": 20 },
-        { "name": "Klasse Türkis",  "teilnehmer": 0, "gesamt": 20 }
+        { "name": "Klasse Orange",  "teilnehmer": 8, "gesamt": 20 },
+        { "name": "Klasse Rot",     "teilnehmer": 2, "gesamt": 20 },
+        { "name": "Klasse Türkis",  "teilnehmer": 13, "gesamt": 20 }
       ]
     },
     {
       "name_de": "Sekundarstufe",
       "name_en": "Secondary Level (Sekundarstufe)",
       "klassen": [
-        { "name": "Lerngruppe Aquila",   "teilnehmer": 0, "gesamt": 20 },
-        { "name": "Lerngruppe Dorado",   "teilnehmer": 0, "gesamt": 20 },
-        { "name": "Lerngruppe Columba",  "teilnehmer": 0, "gesamt": 20 },
-        { "name": "Lerngruppe Phönix",   "teilnehmer": 0, "gesamt": 20 }
+        { "name": "Lerngruppe Aquila",   "teilnehmer": 3, "gesamt": 10 },
+        { "name": "Lerngruppe Dorado",   "teilnehmer": 1, "gesamt": 10 },
+        { "name": "Lerngruppe Columba",  "teilnehmer": 2, "gesamt": 10 },
+        { "name": "Lerngruppe Phönix",   "teilnehmer": 5, "gesamt": 10 }
       ]
     }
   ]
