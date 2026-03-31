@@ -1,3 +1,9 @@
+// Load Google Fonts async (non-render-blocking)
+var gf = document.createElement('link');
+gf.rel = 'stylesheet';
+gf.href = 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Source+Sans+Pro:wght@400;600;700&display=swap';
+document.head.appendChild(gf);
+
 // Hamburger menu
 const toggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
