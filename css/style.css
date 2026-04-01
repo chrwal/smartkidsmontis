@@ -242,6 +242,10 @@ section:nth-child(even) {
   text-align: center;
 }
 
+section.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, #1d3a47 100%);
+}
+
 .hero h1 {
   color: #fff;
   margin-bottom: 0.5em;
