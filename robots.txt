@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://smartkidsmontis.netlify.app/sitemap.xml
