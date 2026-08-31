@@ -1,0 +1,47 @@
+name: Deploy to One.com
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    name: Deploy to One.com via SFTP
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install LFTP
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq lftp
+
+      - name: Sync files to One.com via SFTP
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_USER: ${{ secrets.SFTP_USER }}
+          SFTP_PASS: ${{ secrets.SFTP_PASSWORD }}
+          SFTP_PORT: ${{ secrets.SFTP_PORT || '22' }}
+          REMOTE_DIR: ${{ secrets.SFTP_REMOTE_DIR || '.' }}
+        run: |
+          if [ -z "$SFTP_HOST" ] || [ -z "$SFTP_USER" ] || [ -z "$SFTP_PASS" ]; then
+            echo "::error::Missing required secrets! Please configure SFTP_HOST, SFTP_USER, and SFTP_PASSWORD in GitHub Repository Secrets."
+            exit 1
+          fi
+
+          lftp -u "$SFTP_USER","$SFTP_PASS" -p "$SFTP_PORT" sftp://"$SFTP_HOST" << EOF
+          set sftp:auto-confirm yes
+          set net:timeout 30
+          set net:max-retries 3
+          mirror -R --delete --verbose \
+            -X .git/ \
+            -X .github/ \
+            -X .claude/ \
+            -X .DS_Store \
+            ./ "$REMOTE_DIR"
+          quit
+          EOF

@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Local AI tooling
+.claude/
+
+# Documents
+SmartKids.pdf
