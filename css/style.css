@@ -88,33 +88,35 @@ body {
 }
 
 h1, h2, h3, h4 {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: var(--navy);
-  line-height: 1.2;
+  line-height: 1.15;
 }
 
 h1 {
-  font-size: clamp(2.4rem, 5vw, 3.5rem);
+  font-size: clamp(2.6rem, 5.8vw, 4.2rem);
   font-weight: 800;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
 }
 
 h2 {
-  font-size: clamp(1.85rem, 3.5vw, 2.5rem);
+  font-size: clamp(2.1rem, 4.2vw, 3rem);
   font-weight: 800;
-  letter-spacing: -0.03em;
-  margin-bottom: 0.5em;
+  letter-spacing: -0.035em;
+  line-height: 1.14;
+  margin-bottom: 0.4em;
 }
 
 h3 {
-  font-size: clamp(1.25rem, 2.2vw, 1.45rem);
+  font-size: clamp(1.3rem, 2.4vw, 1.65rem);
   font-weight: 700;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
   margin-bottom: 0.4em;
 }
 
 h4 {
-  font-size: 1.08rem;
+  font-size: 1.12rem;
   font-weight: 700;
   letter-spacing: -0.015em;
 }
@@ -132,12 +134,30 @@ img { max-width: 100%; height: auto; display: block; }
   padding: 0 24px;
 }
 
+/* --- Sections & Color Themes --- */
 section {
-  padding: 88px 0;
+  padding: 96px 0;
 }
 
-section:nth-child(even) {
-  background: var(--bg-white);
+.section-sky {
+  background: #edf6fb;
+}
+
+.section-white {
+  background: #ffffff;
+}
+
+.section-navy {
+  background: var(--navy);
+  color: #ffffff;
+}
+
+.section-navy h1, .section-navy h2, .section-navy h3 {
+  color: #ffffff;
+}
+
+.section-navy p {
+  color: rgba(255, 255, 255, 0.85);
 }
 
 /* --- Buttons --- */
@@ -318,33 +338,65 @@ section:nth-child(even) {
 
 /* --- Hero --- */
 .hero {
-  padding: 96px 0 88px;
-  background: linear-gradient(145deg, #023047 0%, #073a53 50%, #0e4c6c 100%);
+  padding: 104px 0 92px;
+  background: linear-gradient(150deg, #023047 0%, #063952 45%, #0c4d6f 85%, #15628a 100%);
   color: #fff;
   text-align: center;
   position: relative;
+  overflow: hidden;
 }
 
 section.hero {
-  background: linear-gradient(145deg, #023047 0%, #073a53 50%, #0e4c6c 100%);
+  background: linear-gradient(150deg, #023047 0%, #063952 45%, #0c4d6f 85%, #15628a 100%);
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 450px;
+  background: radial-gradient(ellipse at center, rgba(33, 158, 188, 0.3) 0%, rgba(2, 48, 71, 0) 70%);
+  pointer-events: none;
+}
+
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(142, 202, 230, 0.18);
+  border: 1px solid rgba(142, 202, 230, 0.35);
+  color: var(--teal-light);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 7px 20px;
+  border-radius: var(--radius-full);
+  margin-bottom: 24px;
 }
 
 .hero h1 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: #fff;
-  max-width: 800px;
-  margin: 0 auto 0.55em;
-  font-size: clamp(2.4rem, 5.2vw, 3.6rem);
+  max-width: 860px;
+  margin: 0 auto 0.5em;
+  font-size: clamp(2.6rem, 5.8vw, 4.2rem);
   font-weight: 800;
-  line-height: 1.14;
-  letter-spacing: -0.035em;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
 }
 
 .hero .subtitle {
-  font-size: 1.18rem;
-  line-height: 1.75;
-  color: rgba(255, 255, 255, 0.88);
-  max-width: 660px;
-  margin: 0 auto 2.4em;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 680px;
+  margin: 0 auto 2.5em;
   font-weight: 400;
 }
 
@@ -418,7 +470,24 @@ section.hero {
   height: 22px;
 }
 
-/* --- Section Headers --- */
+/* --- Eyebrow Badges & Section Headers --- */
+.eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(33, 158, 188, 0.12);
+  border: 1px solid rgba(33, 158, 188, 0.25);
+  color: var(--teal-dark);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  margin-bottom: 14px;
+}
+
 .section-header {
   text-align: center;
   margin-bottom: 54px;
@@ -433,8 +502,55 @@ section.hero {
   color: var(--text-light);
   max-width: 640px;
   margin: 0 auto;
-  font-size: 1.12rem;
+  font-size: 1.15rem;
   line-height: 1.65;
+}
+
+/* --- Statement Banner (SmarterStart-Style Manifesto) --- */
+.statement-banner {
+  padding: 88px 0;
+  background: linear-gradient(135deg, #ffb703 0%, #ffa500 100%);
+  color: #023047;
+  text-align: center;
+  position: relative;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.statement-content {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.statement-kicker {
+  display: inline-block;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(2, 48, 71, 0.12);
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  margin-bottom: 20px;
+  color: #023047;
+}
+
+.statement-banner blockquote {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(1.9rem, 4.2vw, 2.9rem);
+  font-weight: 800;
+  line-height: 1.22;
+  letter-spacing: -0.035em;
+  color: #023047;
+  margin-bottom: 18px;
+}
+
+.statement-sub {
+  font-size: 1.2rem;
+  font-weight: 500;
+  line-height: 1.65;
+  color: rgba(2, 48, 71, 0.85);
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 /* --- Cards Grid --- */
