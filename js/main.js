@@ -45,14 +45,11 @@ if (trackerContainer) {
   // Unified icon in circle for all stage headings (community / classes)
   const unifiedStageIcon = '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>';
 
-  const stageThemes = ['teal', 'amber', 'orange'];
-
   function renderTracker(data) {
     trackerContainer.innerHTML = '';
-    data.gruppen.forEach((gruppe, idx) => {
-      const theme = stageThemes[idx] || 'teal';
+    data.gruppen.forEach(gruppe => {
       const stage = document.createElement('div');
-      stage.className = `tracker-stage tracker-stage-${theme}`;
+      stage.className = 'tracker-stage tracker-stage-teal';
 
       const stageName = lang === 'de' ? gruppe.name_de : gruppe.name_en;
 
