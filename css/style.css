@@ -360,6 +360,18 @@ section.hero {
   text-align: left;
 }
 
+.hero-logo {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.hero-logo img {
+  height: 40px;
+  width: auto;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
+}
+
 .hero-kicker {
   display: inline-flex;
   align-items: center;
@@ -458,16 +470,17 @@ section.hero {
 
 .hero-image-card {
   position: relative;
-  border-radius: 24px;
+  border-radius: 28px;
   overflow: hidden;
-  box-shadow: 0 24px 50px -10px rgba(2, 48, 71, 0.6), 0 8px 20px rgba(0, 0, 0, 0.25);
-  border: 4px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 24px 60px -10px rgba(0, 0, 0, 0.55), 0 0 50px rgba(33, 158, 188, 0.28);
+  border: 3px solid rgba(142, 202, 230, 0.38);
   background: var(--navy);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
 }
 
 .hero-image-card:hover {
   transform: translateY(-4px);
+  box-shadow: 0 30px 75px -12px rgba(0, 0, 0, 0.65), 0 0 60px rgba(33, 158, 188, 0.38);
 }
 
 .hero-image-card img {
@@ -684,12 +697,42 @@ section.hero {
 .card-icon svg {
   width: 28px;
   height: 28px;
-  color: var(--teal);
   stroke: currentColor;
   stroke-width: 2.2;
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+/* 3 distinct palette colors for Warum cards */
+.card:nth-child(1) .card-icon {
+  background: rgba(33, 158, 188, 0.14);
+}
+.card:nth-child(1) .card-icon svg {
+  color: #219ebc;
+}
+.card:nth-child(1):hover .card-icon {
+  background: rgba(33, 158, 188, 0.24);
+}
+
+.card:nth-child(2) .card-icon {
+  background: rgba(255, 183, 3, 0.18);
+}
+.card:nth-child(2) .card-icon svg {
+  color: #d99200;
+}
+.card:nth-child(2):hover .card-icon {
+  background: rgba(255, 183, 3, 0.28);
+}
+
+.card:nth-child(3) .card-icon {
+  background: rgba(251, 133, 0, 0.14);
+}
+.card:nth-child(3) .card-icon svg {
+  color: #fb8500;
+}
+.card:nth-child(3):hover .card-icon {
+  background: rgba(251, 133, 0, 0.24);
 }
 
 .card h3 {
@@ -711,17 +754,35 @@ section:nth-child(even) .card {
   border-color: var(--border);
 }
 
-/* --- Participation Tracker (Quadratische Cards) --- */
+/* --- Participation Tracker (Modern Label Design, No Dividers) --- */
+.tracker-group {
+  margin-bottom: 42px;
+}
+
+.tracker-group-label {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--navy);
+  background: rgba(142, 202, 230, 0.25);
+  border: 1px solid rgba(33, 158, 188, 0.22);
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  margin-bottom: 20px;
+}
+
 .tracker-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 24px;
-  margin-bottom: 48px;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 22px;
 }
 
 .tracker-item-square {
   aspect-ratio: 1 / 1;
-  min-height: 230px;
+  min-height: 200px;
   background: var(--bg-white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -730,7 +791,8 @@ section:nth-child(even) .card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 16px;
   text-align: center;
   transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
 }
@@ -1110,12 +1172,42 @@ section:nth-child(even) .download-card {
 .download-icon svg {
   width: 28px;
   height: 28px;
-  color: var(--teal);
   stroke: currentColor;
   stroke-width: 2.2;
   fill: none;
   stroke-linecap: round;
   stroke-linejoin: round;
+}
+
+/* 3 distinct palette colors for Downloads */
+.download-card:nth-child(1) .download-icon {
+  background: rgba(33, 158, 188, 0.14);
+}
+.download-card:nth-child(1) .download-icon svg {
+  color: #219ebc;
+}
+.download-card:nth-child(1):hover .download-icon {
+  background: rgba(33, 158, 188, 0.24);
+}
+
+.download-card:nth-child(2) .download-icon {
+  background: rgba(2, 48, 71, 0.10);
+}
+.download-card:nth-child(2) .download-icon svg {
+  color: var(--navy);
+}
+.download-card:nth-child(2):hover .download-icon {
+  background: rgba(2, 48, 71, 0.18);
+}
+
+.download-card:nth-child(3) .download-icon {
+  background: rgba(251, 133, 0, 0.14);
+}
+.download-card:nth-child(3) .download-icon svg {
+  color: #fb8500;
+}
+.download-card:nth-child(3):hover .download-icon {
+  background: rgba(251, 133, 0, 0.24);
 }
 
 .download-card h3 {
