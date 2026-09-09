@@ -60,15 +60,18 @@ if (trackerContainer) {
         const pct = klasse.gesamt > 0
           ? Math.round((klasse.teilnehmer / klasse.gesamt) * 100)
           : 0;
-        // Swapped thresholds: 0-30% orange (#fb8500), 31-69% yellow (#ffb703), 70-100% blue (#8ecae6)
-        const color = pct >= 70 ? 'blue' : pct >= 31 ? 'yellow' : 'orange';
+        // Thresholds: 0-30% yellow (#ffb703), 31-69% orange (#fb8500), 70-100% blue (#8ecae6)
+        const color = pct >= 70 ? 'blue' : pct >= 31 ? 'orange' : 'yellow';
         const circumference = 251.3;
         const validPct = Math.min(100, Math.max(0, pct));
         const offset = (circumference - (validPct / 100) * circumference).toFixed(1);
 
         grid.innerHTML += `
           <div class="tracker-item tracker-item-square">
-            <h4 class="tracker-class-name">${klasse.name}</h4>
+            <div class="tracker-class-pill">
+              <span class="tracker-class-dot"></span>
+              <h4 class="tracker-class-name">${klasse.name}</h4>
+            </div>
             <div class="tracker-circle-container">
               <svg class="tracker-ring" viewBox="0 0 96 96" width="96" height="96" aria-hidden="true">
                 <circle class="tracker-ring-bg" cx="48" cy="48" r="40" />

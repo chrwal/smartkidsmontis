@@ -23,9 +23,9 @@
       "name_en": "Secondary Level (Sekundarstufe)",
       "klassen": [
         { "name": "Lerngruppe Aquila",   "teilnehmer": 3, "gesamt": 10 },
-        { "name": "Lerngruppe Dorado",   "teilnehmer": 1, "gesamt": 10 },
-        { "name": "Lerngruppe Columba",  "teilnehmer": 2, "gesamt": 10 },
-        { "name": "Lerngruppe Phönix",   "teilnehmer": 5, "gesamt": 10 }
+        { "name": "Lerngruppe Dorado",   "teilnehmer": 2, "gesamt": 10 },
+        { "name": "Lerngruppe Columba",  "teilnehmer": 4, "gesamt": 10 },
+        { "name": "Lerngruppe Phönix",   "teilnehmer": 6, "gesamt": 10 }
       ]
     }
   ]
