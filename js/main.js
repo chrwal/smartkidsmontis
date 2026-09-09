@@ -59,15 +59,29 @@ if (trackerContainer) {
             ? Math.round((klasse.teilnehmer / klasse.gesamt) * 100)
             : 0;
           const color = pct >= 60 ? 'green' : pct >= 30 ? 'yellow' : 'red';
+          const circumference = 226.2;
+          const validPct = Math.min(100, Math.max(0, pct));
+          const offset = (circumference - (validPct / 100) * circumference).toFixed(1);
 
           grid.innerHTML += `
             <div class="tracker-item">
-              <div class="tracker-label">
-                <span>${klasse.name}</span>
-                <span>${klasse.teilnehmer} / ${klasse.gesamt} ${labelUnit}</span>
+              <div class="tracker-circle-container">
+                <svg class="tracker-ring" viewBox="0 0 88 88" width="88" height="88" aria-hidden="true">
+                  <circle class="tracker-ring-bg" cx="44" cy="44" r="36" />
+                  <circle class="tracker-ring-fill ${color}" cx="44" cy="44" r="36"
+                          stroke-dasharray="226.2"
+                          stroke-dashoffset="${offset}" />
+                </svg>
+                <div class="tracker-pct-center">
+                  <span class="tracker-pct-number">${pct}</span><span class="tracker-pct-sign">%</span>
+                </div>
               </div>
-              <div class="tracker-bar">
-                <div class="tracker-fill ${color}" style="width: ${pct}%"></div>
+              <div class="tracker-info">
+                <h4 class="tracker-class-name">${klasse.name}</h4>
+                <div class="tracker-badge">
+                  <span class="tracker-count">${klasse.teilnehmer} / ${klasse.gesamt}</span>
+                  <span class="tracker-unit">${labelUnit}</span>
+                </div>
               </div>
             </div>`;
         });
