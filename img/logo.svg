@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 40">
-  <rect x="0" y="4" width="32" height="32" rx="7" fill="#264653"/>
-  <text x="16" y="26" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="16" letter-spacing="-0.5">
-    <tspan fill="#FFFFFF">S</tspan><tspan fill="#2A9D8F">K</tspan>
+  <rect x="0" y="4" width="32" height="32" rx="8" fill="#023047"/>
+  <text x="16" y="26" text-anchor="middle" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="15" letter-spacing="-0.5">
+    <tspan fill="#FFFFFF">S</tspan><tspan fill="#219ebc">K</tspan>
   </text>
-  <text x="42" y="27" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="18">
-    <tspan fill="#264653">Smart</tspan><tspan fill="#2A9D8F">Kids</tspan><tspan fill="#264653">Montis</tspan>
+  <text x="42" y="27" font-family="'Inter', Arial, sans-serif" font-weight="800" font-size="18" letter-spacing="-0.03em">
+    <tspan fill="#023047">Smart</tspan><tspan fill="#219ebc">Kids</tspan><tspan fill="#023047">Montis</tspan>
   </text>
 </svg>

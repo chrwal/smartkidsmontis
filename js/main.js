@@ -58,30 +58,29 @@ if (trackerContainer) {
           const pct = klasse.gesamt > 0
             ? Math.round((klasse.teilnehmer / klasse.gesamt) * 100)
             : 0;
-          const color = pct >= 60 ? 'green' : pct >= 30 ? 'yellow' : 'red';
-          const circumference = 226.2;
+          // Thresholds: 0-30% yellow (#ffb703), 31-69% orange (#fb8500), 70-100% light blue (#8ecae6)
+          const color = pct >= 70 ? 'blue' : pct >= 31 ? 'orange' : 'yellow';
+          const circumference = 251.3;
           const validPct = Math.min(100, Math.max(0, pct));
           const offset = (circumference - (validPct / 100) * circumference).toFixed(1);
 
           grid.innerHTML += `
-            <div class="tracker-item">
+            <div class="tracker-item tracker-item-square">
+              <h4 class="tracker-class-name">${klasse.name}</h4>
               <div class="tracker-circle-container">
-                <svg class="tracker-ring" viewBox="0 0 88 88" width="88" height="88" aria-hidden="true">
-                  <circle class="tracker-ring-bg" cx="44" cy="44" r="36" />
-                  <circle class="tracker-ring-fill ${color}" cx="44" cy="44" r="36"
-                          stroke-dasharray="226.2"
+                <svg class="tracker-ring" viewBox="0 0 96 96" width="96" height="96" aria-hidden="true">
+                  <circle class="tracker-ring-bg" cx="48" cy="48" r="40" />
+                  <circle class="tracker-ring-fill ${color}" cx="48" cy="48" r="40"
+                          stroke-dasharray="251.3"
                           stroke-dashoffset="${offset}" />
                 </svg>
                 <div class="tracker-pct-center">
                   <span class="tracker-pct-number">${pct}</span><span class="tracker-pct-sign">%</span>
                 </div>
               </div>
-              <div class="tracker-info">
-                <h4 class="tracker-class-name">${klasse.name}</h4>
-                <div class="tracker-badge">
-                  <span class="tracker-count">${klasse.teilnehmer} / ${klasse.gesamt}</span>
-                  <span class="tracker-unit">${labelUnit}</span>
-                </div>
+              <div class="tracker-badge">
+                <span class="tracker-count">${klasse.teilnehmer} / ${klasse.gesamt}</span>
+                <span class="tracker-unit">${labelUnit}</span>
               </div>
             </div>`;
         });
